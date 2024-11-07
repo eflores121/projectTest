@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Notas</title>
+    <style>
+        /* Puedes agregar estilos CSS aquí para personalizar la apariencia */
+        table, th, td {
+            border: 1px solid black;
+        }
+        .disabled {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Selecciona tu grado e ingresa los calificativos por cada curso, cuando termines aparecerá tu situación final</h1>
+
+<label for="grado">Selecciona tu grado:</label>
+<select id="grado">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5" selected>5</option>   
+ </select>
+
+<table>
+    <thead>
+        <tr>
+            <th>CURSOS</th>
+            <th>C1</th>
+            <th>C2</th>
+            <th>C3</th>
+            <th>C4</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>MATEMÁTICA</td>
+            <td>
+                <select>
+                    <option value="C">C</option>
+                    <option value="B" selected>B</option>
+                    <option value="A">A</option>
+                    <option value="AD">AD</option>
+                </select>
+            </td>
+            <td>
+                <select>
+                    <option value="C">C</option>
+                    <option value="B" selected>B</option>
+                    <option value="A">A</option>
+                    <option value="AD">AD</option>
+                </select>
+            </td>
+            <td>
+                <select>
+                    <option value="C">C</option>
+                    <option value="B" selected>B</option>
+                    <option value="A">A</option>
+                    <option value="AD">AD</option>
+                </select>
+            </td>
+            <td>
+                <select>
+                    <option value="C">C</option>
+                    <option value="B" selected>B</option>
+                    <option value>A">A</option>
+                    <option value="AD">AD</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>SE DESENVUELVE EN TICS</td>
+            <td class="disabled"></td>
+            <td class="disabled"></td>
+            <td class="disabled"></td>
+            <td class="disabled"></td>
+        </tr>
+        <tr>
+            <td>GESTIONA SU APRENDIZAJE</td>
+            <td class="disabled"></td>
+            <td class="disabled"></td>
+            <td class="disabled"></td>
+            <td class="disabled"></td>
+        </tr>
+    </tbody>
+</table>
+
+<button>CALCULA SI APRUEBO</button>
+
+<p>SITUACIÓN FINAL: <span id="resultado">APROBADO</span></p>
+
+</body>
+</html>
