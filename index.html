@@ -2,78 +2,332 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Calculadora de Notas</title>
+	<meta charset="UTF-8">
+    <title>Calculadora de  s</title>
+	<link rel="stylesheet" href="CSS/style.css">
     <style>
         /* Puedes agregar estilos CSS aquí para personalizar la apariencia */
-        table, th, td {
-            border: 1px solid black;
-        }
-        .disabled {
-            background-color: lightgray;
-        }
+
     </style>
 </head>
 <body>
 
-<h1>Selecciona tu grado e ingresa los calificativos por cada curso, cuando termines aparecerá tu situación final</h1>
+<p id="instrucciones">Selecciona tu grado e ingresa los calificativos por cada curso, cuando termines aparecerá tu situación final</p>
 
-<label for="grado">Selecciona tu grado:</label>
-<select id="grado">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5" selected>5</option> </select>
+<div id="grado-y-boton">
+    <div class="grado-container">
+        <label for="grado">Selecciona tu grado:</label>
+        <select id="grado" class="grado-selector">
+		<option value="" selected disabled style="color: gray;"> </option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    <button>CALCULA SI APRUEBO</button>
+</div>
 
 <table>
     <thead>
         <tr>
             <th>CURSOS</th>
-            <th>C1</th>
-            <th>C2</th>
-            <th>C3</th>
-            <th>C4</th>
+            <th>Comp 1</th>
+            <th>Comp 2</th>
+            <th>Comp 3</th>
+            <th>Comp 4</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>MATEMÁTICA</td>
-            <td>
-                <select>
-                    <option value="C">C</option>
-                    <option value="B" selected>B</option>
-                    <option value="A">A</option>
-                    <option value="AD">AD</option>
-                </select>
-            </td>
-            </tr>
-        <tr>
-            <td>COMUNICACIÓN</td>
-            </tr>
-        <tr>
-            <td>CIENCIA Y TECNOLOGÍA</td>
-            </tr>
-        <tr>
-            <td>DPCC</td>
-            </tr>
-        <tr>
-            <td>CC.SS</td>
-            </tr>
-        <tr>
-            <td>FÍSICA</td>
-            </tr>
-        <tr>
-            <td>ARTE Y CULTURA</td>
-            </tr>
-        <tr>
-            <td>INGLÉS</td>
-            </tr>
-        <tr>
-            <td>RELIGIÓN</td>
-            </tr>
-        <tr>
-            <td>EPT</td>
-            </tr>
+<tr>
+	  <td>MATEMÁTICA</td>
+	  <td>
+		<select id="MAT1">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="MAT2">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="MAT3">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="MAT4">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+</tr>
+
+<tr>
+	  <td>COMUNICACIÓN</td>
+	  <td>
+		<select id="COM1">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="COM2">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="COM3">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  	  <td class="disabled"></td>
+</tr>
+
+<tr>
+	  <td>CIENCIA Y TECNOLOGÍA</td>
+	  <td>
+		<select id="CT1">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="CT2">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="CT3">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  	  <td class="disabled"></td>
+</tr>
+
+<tr>
+	  <td>DPCC</td>
+	  <td>
+		<select id="DPCC1">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="DPCC2">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  	  <td class="disabled"></td>
+		  <td class="disabled"></td>
+</tr>
+
+<tr>
+	  <td>CIENCIAS SOCIALES</td>
+	  <td>
+		<select id="CS1">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="CS2">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="CS3">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  	  <td class="disabled"></td>
+</tr>
+
+<tr>
+	  <td>ED. FÍSICA</td>
+	  <td>
+		<select id="FIS1">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="FIS2">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="FIS3">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  	  <td class="disabled"></td>
+</tr>
+
+<tr>
+	  <td>ARTE Y CULTURA</td>
+	  <td>
+		<select id="ART1">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="ART2">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  	  <td class="disabled"></td>
+		  	  <td class="disabled"></td>
+</tr>
+
+<tr>
+	  <td>INGLÉS</td>
+	  <td>
+		<select id="ING1">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="ING2">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="ING3">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  	  <td class="disabled"></td>
+</tr>
+
+<tr>
+	  <td>RELIGIÓN</td>
+	  <td>
+		<select id="REL1">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="REL2">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  <td class="disabled"></td>
+	  <td class="disabled"></td>
+</tr>
+
+<tr>
+	  <td>EPT</td>
+	  <td>
+		<select id="EPT1">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="C">AD</option>
+		  <option value="B">A</option>
+		  <option value="A">B</option>
+		  <option value="AD">C</option>
+		</select>
+	  </td>
+	  <td class="disabled"></td>
+	  <td class="disabled"></td>
+	  <td class="disabled"></td>
+</tr>
+
         <tr>
             <td>SE DESENVUELVE EN TICS</td>
             <td class="disabled"></td>
@@ -91,9 +345,60 @@
     </tbody>
 </table>
 
-<button>CALCULA SI APRUEBO</button>
+<p>SITUACIÓN FINAL: <span id="resultado">NO HAY NADA TODAVIA JAJA</span></p>
 
-<p>SITUACIÓN FINAL: <span id="resultado">APROBADO</span></p>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Obtenemos todos los elementos select
+    const selects = document.querySelectorAll('select');
+
+    // Iteramos sobre cada select para aplicar los estilos 'red-text' y 'blue-text' según el valor
+    selects.forEach(function (select) {
+        select.addEventListener('change', function () {
+            // Si el select tiene la clase 'grado-selector', no hacemos nada
+            if (select.classList.contains('grado-selector')) return;
+
+            // Restablecer los estilos
+            select.classList.remove('red-text', 'blue-text');
+
+            // Si la opción seleccionada es 'AD', aplicamos el estilo 'red-text'
+            if (this.value === 'AD') {
+                select.classList.add('red-text');
+            } else {
+                select.classList.add('blue-text');
+            }
+        });
+    });
+
+    
+
+    // Evento del botón al hacer clic
+    const boton = document.querySelector('button');
+    boton.addEventListener('click', function (event) {
+        // Validación de si todos los selects tienen un valor
+        const selects = document.querySelectorAll('select');
+        let todosSeleccionados = true;
+
+        selects.forEach(function (select) {
+            if (select.value === "") {
+                todosSeleccionados = false;
+                select.style.border = "2px solid red"; // Resaltamos en rojo los select vacíos
+            } else {
+                select.style.border = "1px solid #ccc"; // Restablecemos el borde
+            }
+        });
+
+        // Si no todos los campos están seleccionados, mostramos un mensaje de error
+        if (!todosSeleccionados) {
+            alert("Por favor, selecciona un valor en todos los campos.");
+            event.preventDefault(); // Prevenimos cualquier acción si no están todos seleccionados
+        } else {
+            // Si todos los campos están seleccionados, calculamos la situación
+            calcularSituacion();
+        }
+    });
+});
+</script>
 
 </body>
 </html>
