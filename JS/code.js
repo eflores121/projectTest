@@ -184,7 +184,7 @@ function CalcularY() {
         mensajeFinal = "Felicitaciones, promoviste de grado.";
     } else {
         estadoFinal = "Recuperación";
-        mensajeFinal = "Debes recuperar las competencias con de los cursos listados: " + cursosDesaprobadosRecuperacion.join(", ");
+        mensajeFinal = "Debes recuperar las competencias de los cursos listados: " + cursosDesaprobadosRecuperacion.join(", ");
     }
 
     // Mostrar el estado final del estudiante y mensaje adicional
