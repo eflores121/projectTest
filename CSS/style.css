@@ -5,54 +5,84 @@ body {
     margin: 20px;
 }
 
+#contenedor {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
 /* tabla */
 table {
     margin: 20px auto;
     border-collapse: collapse;
-    width: 50%;
+    width: 100%; /* Ocupa el 100% del contenedor */
+    table-layout: fixed; /* Distribuye las columnas de manera uniforme según el ancho especificado */
     font-size: 12px;
+}
+
+/* Establecer el ancho de las columnas */
+th:nth-child(1), td:nth-child(1) {
+    width: 32%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 18%;
+}
+
+/* Ajuste específico para móviles */
+/* Aplicamos el estilo para que la tabla ocupe todo el ancho y las columnas tengan un tamaño uniforme */
+@media (max-width: 768px) {
+    #contenedor {
+        width: 100vw;      /* Abarca el ancho de la pantalla en móviles */
+        padding: 5px;
+    }
+    table {
+        font-size: 10px;   /* Opcional: reduce ligeramente el tamaño de la fuente */
+    }
 }
 
 /* Estilo para las celdas y encabezados */
 th, td {
-    border: 1px solid #e0e0e0;  /* Bordes suaves de color gris claro */
-    padding: 0px 1px; /* Reducir el padding para filas más compactas */
+    border: 1px solid #e0e0e0;
+    padding: 0px 1px;
     text-align: center;
-    line-height: 1.2; /* Reducir la altura de la línea de texto */
-    height: 30px; /* Establecer una altura fija para las celdas */
+    line-height: 1.2;
+    height: 30px;
 }
 
 /* Encabezados */
 th {
-    background: linear-gradient(135deg, #6a9eec, #4c81c7); /* Degradado azul suave */
+    background: linear-gradient(135deg, #6a9eec, #4c81c7);
     color: white;
     font-size: 16px;
-    font-weight: 600; /* Un poco más de peso para los encabezados */
-    text-transform: uppercase;  /* Hace que el texto esté en mayúsculas */
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 /* Primera columna con fondo destacado */
 td:first-child {
-    background-color: #f7f7f7;  /* Fondo gris muy claro para la columna de los cursos */
+    background-color: #f7f7f7;
 }
 
 /* Estilo para las celdas deshabilitadas (vacías) */
 td.disabled {
-    background-color: #f7f7f7;  /* Fondo muy claro para las celdas vacías */
-    color: #bbb;  /* Color gris para texto deshabilitado */
+    background-color: #f7f7f7;
+    color: #bbb;
 }
 
 /* Estilo para los selectores */
 td select {
     background-color: #fff;
     border: 1px solid #ccc;
-    color: #007bff;  /* Azul por defecto */
-    height: 24px; /* Establecer una altura más baja para los selectores */
-    padding: 2px 5px; /* Reducir el padding interno de los selectores */
+    color: #007bff;
+    height: 24px;
+    padding: 2px 5px;
 }
 
 /* Cambiar el color del texto a rojo si el valor seleccionado es "C" */
-/* Cambiar color del texto de la opción seleccionada */
 select.red-text {
     color: red !important;
 }
@@ -80,23 +110,23 @@ button:hover {
     font-size: 14px;
     text-align: center;
     margin-bottom: 20px;
-    font-weight: bold; /* Añadido para poner el texto en negrita */
+    font-weight: bold;
 }
 
 /* Contenedor para el select y el botón */
 #grado-y-boton {
-    display: flex;  /* Usamos flexbox para alinearlos en una fila */
-    justify-content: center;  /* Centra los elementos en la fila */
-    align-items: center;  /* Alinea los elementos verticalmente */
-    gap: 70px;  /* Espacio entre el select y el botón */
-    margin-bottom: 20px;  /* Espacio entre los controles y la tabla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    margin-bottom: 20px;
 }
 
 /* Contenedor específico para el label y el select */
 .grado-container {
-    display: flex;  /* Alinea el label y el select en fila */
-    align-items: center;  /* Alineación vertical de los elementos en el contenedor */
-    gap: 5px;  /* Espacio entre el label y el select */
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 /* Estilo común para el select y el botón */
@@ -106,10 +136,10 @@ button:hover {
     padding: 8px 12px;
     border-radius: 4px;
     border: 1px solid #ccc;
-    box-sizing: border-box;  /* Asegura que el padding y el border no afecten el tamaño */
-    height: 40px;  /* Establecemos la misma altura para ambos */
-    line-height: 24px;  /* Alineación del texto dentro del select */
-    margin: 0;  /* Asegura que no haya márgenes extra */
+    box-sizing: border-box;
+    height: 40px;
+    line-height: 24px;
+    margin: 0;
 }
 
 /* Estilo específico para el botón */
@@ -126,7 +156,8 @@ button:hover {
 
 /* Etiqueta del select */
 .grado-container label {
-    font-weight: bold;  /* Hace que la etiqueta esté en negrita */
+    font-weight: bold;
+
 }
 
 #resultado {
@@ -137,13 +168,31 @@ button:hover {
     border-radius: 8px;
     width: 50%;
     margin: 20px auto;
-	background-color: #e3f2fd;  /* Fondo azul muy claro */
-    border: 2px solid #4c81c7;  /* Borde azul */
+    background-color: #e3f2fd;
+    border: 2px solid #4c81c7;
 }
 
 #resultado p {
-    margin: 5px 0; /* Margen pequeño para que estén cerca, simulando un solo bloque */
+    margin: 5px 0;
     color: #333;
     font-size: 14px;
     font-weight: bold;
+}
+
+#loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    display: none;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
 }
