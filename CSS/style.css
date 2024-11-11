@@ -187,6 +187,13 @@ button:hover {
     display: none;
 }
 
+.whatsapp-button {
+    display: block;             /* Hace que el botón ocupe toda la línea */
+    width: 300px;               /* Ancho del botón para escritorio */
+    height: 60px;               /* Alto del botón */
+    margin: 20px auto;          /* Centra el botón horizontalmente */
+    text-align: center;         /* Centra el contenido dentro del botón */
+}
 /* Estilos específicos para pantallas pequeñas (móviles) */
 @media (max-width: 768px) {
 
@@ -254,6 +261,13 @@ button:hover {
     }
     th:nth-child(5), td:nth-child(5) {
         width: 17%; /* Ancho de la quinta columna */
+    }
+	
+    .whatsapp-button {
+        width: 150px !important; /* Ajusta el ancho en móviles */
+        margin: 10px auto !important; /* Centra el botón en móviles */
+        display: flex;
+        justify-content: center; /* Asegura que esté centrado */
     }
 
 }
