@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +7,9 @@
 	<link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
  <script type="module" src="JS/code.js"></script>
+ <!-- Cargar la librería html2canvas desde un CDN -->
 
 <div id="contenedor">
 
@@ -38,110 +39,7 @@
         </tr>
     </thead>
     <tbody>
-<tr>
-	  <td>MATEMÁTICA</td>
-	  <td>
-		<select id="MAT1">
-		  <option value="" selected disabled style="color: gray;"> </option>
-		  <option value="AD">AD</option>
-		  <option value="A">A</option>
-		  <option value="B">B</option>
-		  <option value="C">C</option>
-		</select>
-	  </td>
-	  <td>
-		<select id="MAT2">
-		  <option value="" selected disabled style="color: gray;"> </option>
-		  <option value="AD">AD</option>
-		  <option value="A">A</option>
-		  <option value="B">B</option>
-		  <option value="C">C</option>
-		</select>
-	  </td>
-	  <td>
-		<select id="MAT3">
-		  <option value="" selected disabled style="color: gray;"> </option>
-		  <option value="AD">AD</option>
-		  <option value="A">A</option>
-		  <option value="B">B</option>
-		  <option value="C">C</option>
-		</select>
-	  </td>
-	  <td>
-		<select id="MAT4">
-		  <option value="" selected disabled style="color: gray;"> </option>
-		  <option value="AD">AD</option>
-		  <option value="A">A</option>
-		  <option value="B">B</option>
-		  <option value="C">C</option>
-		</select>
-	  </td>
-</tr>
-
-<tr>
-	  <td>COMUNICACIÓN</td>
-	  <td>
-		<select id="COM1">
-		  <option value="" selected disabled style="color: gray;"> </option>
-		  <option value="AD">AD</option>
-		  <option value="A">A</option>
-		  <option value="B">B</option>
-		  <option value="C">C</option>
-		</select>
-	  </td>
-	  <td>
-		<select id="COM2">
-		  <option value="" selected disabled style="color: gray;"> </option>
-		  <option value="AD">AD</option>
-		  <option value="A">A</option>
-		  <option value="B">B</option>
-		  <option value="C">C</option>
-		</select>
-	  </td>
-	  <td>
-		<select id="COM3">
-		  <option value="" selected disabled style="color: gray;"> </option>
-		  <option value="AD">AD</option>
-		  <option value="A">A</option>
-		  <option value="B">B</option>
-		  <option value="C">C</option>
-		</select>
-	  </td>
-	  	  <td class="disabled"></td>
-</tr>
-
-<tr>
-	  <td>CIENCIA Y TECNOLOGÍA</td>
-	  <td>
-		<select id="CT1">
-		  <option value="" selected disabled style="color: gray;"> </option>
-		  <option value="AD">AD</option>
-		  <option value="A">A</option>
-		  <option value="B">B</option>
-		  <option value="C">C</option>
-		</select>
-	  </td>
-	  <td>
-		<select id="CT2">
-		  <option value="" selected disabled style="color: gray;"> </option>
-		  <option value="AD">AD</option>
-		  <option value="A">A</option>
-		  <option value="B">B</option>
-		  <option value="C">C</option>
-		</select>
-	  </td>
-	  <td>
-		<select id="CT3">
-		  <option value="" selected disabled style="color: gray;"> </option>
-		  <option value="AD">AD</option>
-		  <option value="A">A</option>
-		  <option value="B">B</option>
-		  <option value="C">C</option>
-		</select>
-	  </td>
-	  	  <td class="disabled"></td>
-</tr>
-
+	
 <tr>
 	  <td>DPCC</td>
 	  <td>
@@ -255,6 +153,38 @@
 </tr>
 
 <tr>
+	  <td>COMUNICACIÓN</td>
+	  <td>
+		<select id="COM1">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="AD">AD</option>
+		  <option value="A">A</option>
+		  <option value="B">B</option>
+		  <option value="C">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="COM2">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="AD">AD</option>
+		  <option value="A">A</option>
+		  <option value="B">B</option>
+		  <option value="C">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="COM3">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="AD">AD</option>
+		  <option value="A">A</option>
+		  <option value="B">B</option>
+		  <option value="C">C</option>
+		</select>
+	  </td>
+	  	  <td class="disabled"></td>
+</tr>
+
+<tr>
 	  <td>INGLÉS</td>
 	  <td>
 		<select id="ING1">
@@ -276,6 +206,78 @@
 	  </td>
 	  <td>
 		<select id="ING3">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="AD">AD</option>
+		  <option value="A">A</option>
+		  <option value="B">B</option>
+		  <option value="C">C</option>
+		</select>
+	  </td>
+	  	  <td class="disabled"></td>
+</tr>
+
+<tr>
+	  <td>MATEMÁTICA</td>
+	  <td>
+		<select id="MAT1">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="AD">AD</option>
+		  <option value="A">A</option>
+		  <option value="B">B</option>
+		  <option value="C">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="MAT2">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="AD">AD</option>
+		  <option value="A">A</option>
+		  <option value="B">B</option>
+		  <option value="C">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="MAT3">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="AD">AD</option>
+		  <option value="A">A</option>
+		  <option value="B">B</option>
+		  <option value="C">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="MAT4">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="AD">AD</option>
+		  <option value="A">A</option>
+		  <option value="B">B</option>
+		  <option value="C">C</option>
+		</select>
+	  </td>
+</tr>
+
+<tr>
+	  <td>CIENCIA Y TECNOLOGÍA</td>
+	  <td>
+		<select id="CT1">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="AD">AD</option>
+		  <option value="A">A</option>
+		  <option value="B">B</option>
+		  <option value="C">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="CT2">
+		  <option value="" selected disabled style="color: gray;"> </option>
+		  <option value="AD">AD</option>
+		  <option value="A">A</option>
+		  <option value="B">B</option>
+		  <option value="C">C</option>
+		</select>
+	  </td>
+	  <td>
+		<select id="CT3">
 		  <option value="" selected disabled style="color: gray;"> </option>
 		  <option value="AD">AD</option>
 		  <option value="A">A</option>
@@ -348,10 +350,11 @@
     <p id="mensaje"></p>
 </div>
 	
-	    <a class="whatsapp-button" href="https://wa.me/51902569590?text=Brindame%20un%20CODIGO%20..." target="_blank">
+	    <a class="whatsapp-button" href="https://wa.me/51902569590?text=Brindame%20un%2código%20..." target="_blank">
         <img src="img/consulta.png" alt="Botón WhatsApp">
     </a>
-
+<!-- Enlace de descarga para la imagen, con evento de captura -->
+<a id="download-link" href="#">Descargar imagen</a>
 </div>
 </body>
 </html>
