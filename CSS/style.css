@@ -243,7 +243,7 @@ button:hover {
 
     /* Ajustes para los select dentro de la tabla */
     td select {
-        width: 70%; /* Asegurar que los select ocupen todo el ancho disponible de la celda */
+        width: 90%; /* Asegurar que los select ocupen todo el ancho disponible de la celda */
         box-sizing: border-box; /* Asegurar que el padding y border no afecten el ancho total */
         padding: 5px !important; /* Agregar un poco de padding */
     }
