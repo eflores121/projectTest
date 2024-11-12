@@ -45,7 +45,7 @@ th, td {
 
 /* Encabezados */
 th {
-    background: linear-gradient(135deg, #1C9C56, #09633d);
+    background: #0C964E;
     color: white;
     font-size: 16px;
     font-weight: 600;
@@ -148,6 +148,7 @@ button:hover {
 /* Etiqueta del select */
 .grado-container label {
     font-weight: bold;
+
 }
 
 #resultado {
@@ -194,6 +195,7 @@ button:hover {
     margin: 20px auto;          /* Centra el botón horizontalmente */
     text-align: center;         /* Centra el contenido dentro del botón */
 }
+
 /* Estilos específicos para pantallas pequeñas (móviles) */
 @media (max-width: 768px) {
 
@@ -204,7 +206,7 @@ button:hover {
 
     /* Fondo para el contenedor en móviles */
     #contenedor {
-        width: 100%;
+        width: 95%;
         background: linear-gradient(198deg, rgba(253,253,253,1) 0%, rgba(250,250,250,1) 56%, rgba(241,241,241,1) 100%);
     }
 
@@ -216,7 +218,7 @@ button:hover {
 
     /* Ajustes de los encabezados */
     th {
-        background: linear-gradient(135deg, #1C9C56, #09633d);
+        background: #0C964E;
         color: white;
         font-size: 11px;
         font-weight: 600;
@@ -264,10 +266,25 @@ button:hover {
     }
 	
     .whatsapp-button {
-        width: 150px !important; /* Ajusta el ancho en móviles */
+        width: 100px !important; /* Ajusta el ancho en móviles */
         margin: 10px auto !important; /* Centra el botón en móviles */
         display: flex;
         justify-content: center; /* Asegura que esté centrado */
     }
 
+}
+
+/* Estilo específico para el enlace de descarga */
+#download-link {
+    display: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #1C9C56;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#download-link:hover {
+    color: #0C964E;
 }
