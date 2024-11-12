@@ -187,82 +187,95 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Función de cálculo para grado Y
-function CalcularY() {
-    const cursos = {
-        MATEMATICA: ["MAT1", "MAT2", "MAT3", "MAT4"],
-        COMUNICACION: ["COM1", "COM2", "COM3"],
-        "CIENCIA Y TECNOLOGIA": ["CT1", "CT2", "CT3"],
-        DPCC: ["DPCC1", "DPCC2"],
-        "CIENCIAS SOCIALES": ["CS1", "CS2", "CS3"],
-        "ED. FISICA": ["FIS1", "FIS2", "FIS3"],
-        "ARTE Y CULTURA": ["ART1", "ART2"],
-        INGLES: ["ING1", "ING2", "ING3"],
-        RELIGION: ["REL1", "REL2"],
-        EPT: ["EPT1"]
-    };
+    function CalcularY() {
+        const cursos = {
+            MATEMATICA: ["MAT1", "MAT2", "MAT3", "MAT4"],
+            COMUNICACION: ["COM1", "COM2", "COM3"],
+            "CIENCIA Y TECNOLOGIA": ["CT1", "CT2", "CT3"],
+            DPCC: ["DPCC1", "DPCC2"],
+            "CIENCIAS SOCIALES": ["CS1", "CS2", "CS3"],
+            "ED. FISICA": ["FIS1", "FIS2", "FIS3"],
+            "ARTE Y CULTURA": ["ART1", "ART2"],
+            INGLES: ["ING1", "ING2", "ING3"],
+            RELIGION: ["REL1", "REL2"],
+            EPT: ["EPT1"]
+        };
 
-    let cursosDp = 0;
-    let cursosAp = 0;
-    let cursosRp = 0;
-    let resultadoText = "";
-    let cursosDesaprobadosRecuperacion = []; // Lista de cursos con estado "Dp" o "Rp"
+        let cursosDp = 0;
+        let cursosAp = 0;
+        let cursosRp = 0;
+        let resultadoText = "";
+        let cursosDesaprobados = [];
 
-    // Calcular el estado de cada curso según el grado 2 o 5
-    for (const [curso, competencias] of Object.entries(cursos)) {
-        let countC = 0;
-        let countA_AD = 0;
-        let countB = 0;
+        // Calcular el estado de cada curso
+        for (const [curso, competencias] of Object.entries(cursos)) {
+            let countC = 0;
+            let countRp = 0;
+            let countAp = 0;
 
-        competencias.forEach(compId => {
-            const comp = document.getElementById(compId);
-            if (comp) {
-                if (comp.value === "C") {
+            competencias.forEach(compId => {
+                const comp = document.getElementById(compId);
+                if (comp && comp.value === "C") {
                     countC++;
-                } else if (comp.value === "A" || comp.value === "AD") {
-                    countA_AD++;
-                } else if (comp.value === "B") {
-                    countB++;
+                } else if (comp && comp.value === "Rp") {
+                    countRp++;
+                } else if (comp && comp.value === "Ap") {
+                    countAp++;
+                }
+            });
+
+            const halfCompetencias = Math.ceil(competencias.length / 2);
+            
+            // Evaluar los cursos
+            if (competencias.length % 2 === 0) {
+                if (countC > halfCompetencias) {
+                    resultadoText += `${curso}: Dp, `;
+                    cursosDp++;
+                    cursosDesaprobados.push(curso);
+                } else {
+                    resultadoText += `${curso}: Ap, `;
+                    cursosAp++;
+                }
+            } else {
+                if (countC >= halfCompetencias) {
+                    resultadoText += `${curso}: Dp, `;
+                    cursosDp++;
+                    cursosDesaprobados.push(curso);
+                } else {
+                    resultadoText += `${curso}: Ap, `;
+                    cursosAp++;
                 }
             }
-        });
-
-        const halfCompetencias = Math.ceil(competencias.length / 2);
-
-        // Lógica para grados 2 y 5
-        if (countC >= halfCompetencias) {
-            resultadoText += `${curso}: Dp, `;
-            cursosDp++;
-            cursosDesaprobadosRecuperacion.push(curso);
-        } else if (countA_AD >= halfCompetencias && countB + countA_AD === competencias.length) {
-            resultadoText += `${curso}: Ap, `;
-            cursosAp++;
-        } else {
-            resultadoText += `${curso}: Rp, `;
-            cursosRp++;
-            cursosDesaprobadosRecuperacion.push(curso);
         }
+
+        let estadoFinal = "";
+        let mensajeFinal = "";
+
+        if (cursosDp >= 4) {
+            estadoFinal = "Desaprobado";
+            mensajeFinal = "Permaneces en el mismo grado por haber desaprobado 4 o más cursos.";
+        } else if (cursosDp >= 1) {
+            estadoFinal = "Recuperación";
+            mensajeFinal = "Debes recuperar las competencias con 'C' de los cursos listados: " + cursosDesaprobados.join(", ");
+        } else {
+            estadoFinal = "Aprobado";
+            mensajeFinal = "Felicitaciones, promoviste de grado.";
+        }
+
+        // Mostrar el estado final del estudiante y mensaje adicional
+        document.getElementById("situacion").textContent = `Situación Final: ${estadoFinal}`;
+        document.getElementById("mensaje").textContent = ` ${mensajeFinal}`;
+
+        // Mostrar el resultado y preparar el enlace de descarga
+        mostrarResultado();
     }
 
-    // Calcular el estado final del estudiante
-    let estadoFinal = "";
-    let mensajeFinal = "";
-
-    if (cursosDp >= 4) {
-        estadoFinal = "Desaprobado";
-        mensajeFinal = "Permaneces en el mismo grado por haber desaprobado 4 o más cursos.";
-    } else if (cursosAp >= 3 && cursosRp === 0) {
-        estadoFinal = "Aprobado";
-        mensajeFinal = "Felicitaciones, promoviste de grado.";
-    } else {
-        estadoFinal = "Recuperación";
-        mensajeFinal = "Debes recuperar las competencias de los cursos listados: " + cursosDesaprobadosRecuperacion.join(", ");
-    }
     // Función para mostrar el resultado y preparar el enlace de descarga
     function mostrarResultado() {
         document.getElementById("resultado").style.display = "block"; 
         document.querySelector(".whatsapp-button").style.display = "none"; // Ocultar WhatsApp
         document.getElementById("download-link").style.display = "inline-block"; // Mostrar enlace de descarga
-		document.querySelector('.download-link').parentElement.style.textAlign = 'center'; // Centra el contenido
+		document.querySelector('.whatsapp-button').parentElement.style.textAlign = 'center'; // Centra el contenido
     }
 
     // Función para capturar y descargar la imagen del contenedor
