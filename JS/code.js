@@ -17,6 +17,25 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 document.addEventListener('DOMContentLoaded', function () {
+	    // Código para mostrar el modal
+    const modal = document.getElementById("modal");
+    const closeModal = document.querySelector(".close");
+
+    // Muestra el modal al cargar la página
+    modal.style.display = "flex";
+
+    // Cierra el modal al hacer clic en la "X"
+    closeModal.onclick = function () {
+        modal.style.display = "none";
+    };
+
+    // Cierra el modal al hacer clic fuera de la imagen
+    modal.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+	
     // Seleccionamos todos los elementos <select>
     const selects = document.querySelectorAll('select');
     
