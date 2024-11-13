@@ -6,6 +6,72 @@ body {
     background: linear-gradient(198deg, rgba(253,253,253,1) 0%, rgba(250,250,250,1) 56%, rgba(241,241,241,1) 100%); /* Degradado original */
 }
 
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Nuevo contenedor para la imagen y la "X" */
+/* Ajuste del contenedor del modal para un tamaño máximo y forma cuadrada */
+.modal-image-container {
+    position: relative;
+    width: 80vw; /* Ancho máximo relativo al viewport */
+    max-width: 600px; /* Ancho máximo absoluto */
+    height: 80vw; /* Altura relativa al ancho (mantiene proporción cuadrada) */
+    max-height: 600px; /* Altura máxima absoluta */
+    background-color: white; /* Fondo blanco para distinguir el contenedor */
+    border: 3px solid white; /* Borde alrededor del contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Evita que la imagen se desborde */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ajuste de la imagen dentro del modal para que se adapte */
+.modal-content {
+    width: 100%;
+    height: 100%; /* La imagen ocupará todo el contenedor cuadrado */
+    object-fit: contain; /* Asegura que la imagen se ajuste al contenedor sin distorsionarse */
+    border-radius: 8px; /* Bordes redondeados si se desea */
+}
+
+
+/* Botón de cierre "X" en la esquina superior derecha del contenedor de la imagen */
+/* Botón de cierre estilizado */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 0, 0, 0.8); /* Rojo con semitransparencia */
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 10px; /* Esquinas redondeadas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efecto hover */
+.close:hover {
+    background-color: rgba(200, 0, 0, 1); /* Un tono de rojo más oscuro en hover */
+    transform: scale(1.15); /* Aumenta un poco el tamaño al pasar el cursor */
+}
+
+
 #contenedor {
     width: 100%;
     max-width: 1200px;
