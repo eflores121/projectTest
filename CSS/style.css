@@ -309,9 +309,14 @@ button:hover {
 
     /* Ajustes para los select dentro de la tabla */
     td select {
-        width: 90%; /* Asegurar que los select ocupen todo el ancho disponible de la celda */
-        box-sizing: border-box; /* Asegurar que el padding y border no afecten el ancho total */
-        padding: 5px !important; /* Agregar un poco de padding */
+		width: 90%; /* Asegura que los select ocupen todo el ancho disponible de la celda */
+        box-sizing: border-box; /* Asegura que el padding y border no afecten el ancho total */
+        padding: 6px 10px; /* Ajusta el padding para dar un poco más de espacio */
+        background-color: #fff;
+        border: 1px solid #ccc;
+        color: #007bff;
+        height: 30px; /* Ajusta la altura para no ocupar demasiado espacio */
+        font-size: 12px; /* Reduce el tamaño de la fuente para que quepa mejor */
     }
 
     /* Ajustes para el ancho de cada columna */
